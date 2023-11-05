@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "promo-u-module-4-pair-1-netflix",
+			"path": "."
+		},
+		{
+			"name": "src",
+			"path": "../ejercicios-de-los-materiales/node-ejercicio-netflix/src"
+		},
+		{
+			"name": "web",
+			"path": "../ejercicios-de-los-materiales/node-ejercicio-netflix/web"
+		}
+	],
+	"settings": {}
+}
