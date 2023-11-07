@@ -7,10 +7,11 @@ server.use(cors());
 server.use(express.json());
 
 // init express aplication
-const serverPort = 4000;
+const serverPort = 4002;
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
-server.get("/", async () => {
+server.get("/", async (req, res) => {
+  //const connection = await getConnection();
   console.log(`Estoy en la ruta barrita`);
 });
