@@ -13,7 +13,7 @@ server.use(express.json());
 async function getConnection() {
   //creary configurar la conexion
   const connection = await mysql.createConnection({
-    host: "localhost:3306",
+    host: "localhost",
     user: "root",
     password: "arbite",
     database: "Netflix",
@@ -22,7 +22,7 @@ async function getConnection() {
   connection.connect();
   return connection;
 }
-app.get("/api/movies", async (req, res) => {
+server.get("/api/movies", async (req, res) => {
   //require para cuando envien datos
   //response para enviar desde el server datos al front
 
@@ -40,7 +40,10 @@ app.get("/api/movies", async (req, res) => {
 
   //4. Cerra la conexión
   conn.end();
-  res.json(results);
+  res.json({
+    success: true,
+    movies: results,
+  });
 });
 
 // init express aplication
@@ -48,7 +51,7 @@ const serverPort = 4002;
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
-server.get("/", async (req, res) => {
+server.get("/api/movies", async (req, res) => {
   //const connection = await getConnection();
   console.log(`Estoy en la ruta barrita`);
 });
